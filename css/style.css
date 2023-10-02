@@ -1,0 +1,89 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Lucida Handwriting", Bradley Hand ITC, Times New Roman;
+     background-color: #b8e2f2;
+     color: black;
+     transition: all 1s ease-in;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px;
+}
+
+img {
+    width: 300px;
+}
+
+.container {
+    display: grid;
+    width: 100%;
+    min-height: 50%;
+    place-content: center;
+    gap: 5rem;
+    text-align: center;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 3.75rem;
+    height: 2.13rem;
+    margin-bottom: 0.63rem;
+    margin-inline: auto;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+    transition: all .5s ease-in;
+    border-radius: 2.15rem;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.65rem;
+    width: 1.65rem;
+    left: 0.25rem;
+    bottom: 0.25rem;
+    background-color: #fae29c;
+    transition: 0.5s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: white;
+}
+
+input:checked + .slider:before {
+    transform: translateX(1.55rem);
+}
+/* this only appears in the js file */
+body.light-mode {
+    background-color: #b8e2f2;
+    color: black;
+    transition: all 0.5s ease-in;
+}
+
+body.dark-mode {
+    background-color: #152238;
+    color: #fae29c;
+    transition: all 0.5s ease-in;
+}
